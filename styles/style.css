@@ -18,8 +18,8 @@ A style CSS file for my webpage, nothing special about it really
 /* Everything else */
 /* Font 1: Main */
 @font-face {
-  src: url("../fonts/basiic.ttf");
-  font-family: "basiic";
+  src: url("../fonts/Web437_IBM_Model3x_Alt2.woff");
+  font-family: "Model3x";
 }
 
 
@@ -31,9 +31,10 @@ body, nav, ul, li {
 body {
   /* Setting colors so browsers wouldnt override them */
   background-color: #ffffff;
-  background-image: url("../images/background.gif");
-  color: #000000;
-  font-family: "basiic", serif;
+  background-image: url("../images/background_new.gif");
+  color: #ffffff;
+  font-family: "Model3x", serif;
+  line-height: 0.9;
   font-size: 16px;
 }
 
@@ -41,7 +42,8 @@ header {
   position: sticky;
   top: 0;
   border-bottom: 2px solid #000000;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
+  background-color: #10182b;
 }
 
 nav ul {
@@ -55,7 +57,8 @@ nav li {
 
 nav a {
   display: inline-block;
-  color: #000000;
+  /* color: #000000; */
+  color: #ffffff;
   text-decoration: none;
   padding: 8px;
 }
@@ -69,18 +72,35 @@ nav a {
 #logo:hover { cursor: default; }
 
 nav a:hover, #logo:hover {
-  background-color: #5abbe8;
+  /* background-color: #5abbe8; */
+  background-color: #2d53ad;
   color: #ffffff;
 }
 
 main {
-  background-color: #ffffff;
-  width: 640px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
   margin-top: 16px;
   margin-bottom: 16px;
   margin-left: auto;
   margin-right: auto;
+}
+
+main div {
+  /* background-color: #ffffff; */
+  background-color: #10182b;
+  color: #ffffff;
   border: 2px solid #000000;
+  align-self: flex-start;
+}
+
+main #main-text {
+  width: 640px;
+}
+
+main #news-content {
+  width: 240px;
 }
 
 main * {
@@ -95,9 +115,24 @@ main img {
   width: 320px;
 }
 
+main li {
+  list-style-type: none;
+}
+
 main figcaption, .small {
-  font-size: 12px;
+  font-size: 13px;
   color: #808080;
+}
+
+#badge-header {
+  margin-bottom: -36px; /* I hope this doesn't break a bunch of stuff... */
+}
+
+#badges img {
+  width: auto;
+  margin: 0px;
+  margin-left: -8px;
+  margin-right: -8px; /* Someone please take away my coding permissions */
 }
 
 @media only screen and (orientation: portrait) {
@@ -106,9 +141,21 @@ main figcaption, .small {
   }
 
   main {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  main div {
     border-left: 0px;
     border-right: 0px;
+    margin: 0;
+    margin-top: 8px;
+    margin-bottom: 8px;
     width: 100%;
+  }
+  
+  main #main-text, main #news-content {
+	width: 100%;
   }
 
   #logo {
