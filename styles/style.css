@@ -115,7 +115,7 @@ main img {
   width: 320px;
 }
 
-main li {
+main #news-content li {
   list-style-type: none;
 }
 
